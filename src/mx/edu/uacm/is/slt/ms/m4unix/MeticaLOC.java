@@ -1,5 +1,7 @@
 package mx.edu.uacm.is.slt.ms.m4unix;
 
+import java.util.Scanner;
+
 /**
  *
  * @author David R
@@ -49,7 +51,21 @@ public class MeticaLOC {
                 "\nInterpretacion:  " + nivelTamanio() + "\nDescipcion:  " + Informacion();
     }
     
-    
+    public static void main (String[] args){
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("\t\tMetrica Lineas de Codigo (LOC)\n");
+        System.out.println("\nIngrese el numero total de lineas de codigo:    ");
+        int lineasCodigo = scan.nextInt();
+        if(lineasCodigo > 0){
+            MeticaLOC metricaLOC = new MeticaLOC(lineasCodigo);
+            
+            System.out.println("\n\t\tResultados");
+            System.out.println(metricaLOC.Imprimir());
+        }else{ 
+            System.out.println("Valor no valido, intente nuevamente");
+        }
+    }
     
     
 }
